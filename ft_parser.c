@@ -6,7 +6,7 @@
 /*   By: nmougino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 10:23:58 by nmougino          #+#    #+#             */
-/*   Updated: 2016/02/02 10:26:05 by nmougino         ###   ########.fr       */
+/*   Updated: 2016/02/06 18:19:40 by nmougino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	ft_parserorga(char *buf)
 	while (*buf)
 	{
 		len = ft_getlinesize(buf);
+		if (len != 4 && len != 0)
+			return (0);
 		if (len == 4 && !(i-- > 0))
 			return (0);
 		else if (len == 0 && i != 0)
